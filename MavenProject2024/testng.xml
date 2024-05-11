@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="batchrun">
+  <test  name="ChromeTest">
+  <parameter name="browser" value="chrome"></parameter>
+    <classes>
+       <class name="pack1.A"/>
+      <class name="pack1.AA"/>
+      <class name="pack1.AAA"/>
+   
+    </classes>
+  </test> <!-- Test -->
+  
+  <test  name="firefoxtest">
+  <parameter name="browser" value="firefox"></parameter>
+    <classes>
+     <class name="pack1.A"/>
+      <class name="pack1.AA"/>
+      <class name="pack1.AAA"/>
+    </classes>
+    </test> <!-- Test -->
+  
+</suite> <!-- batchrun -->

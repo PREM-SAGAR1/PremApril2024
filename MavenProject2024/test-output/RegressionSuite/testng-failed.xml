@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [RegressionSuite]">
+  <test name="ChromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="pack1.RadioButton1">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="radioButtonTest"/>
+        </methods>
+      </class> <!-- pack1.RadioButton1 -->
+      <class name="pack1.LinksTesting1">
+        <methods>
+          <include name="linktesting1"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- pack1.LinksTesting1 -->
+      <class name="pack1.CheckBox1">
+        <methods>
+          <include name="checkboxTest"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- pack1.CheckBox1 -->
+      <class name="pack1.TNG_001">
+        <methods>
+          <include name="amazon"/>
+          <include name="startprocess"/>
+          <include name="endProcess"/>
+        </methods>
+      </class> <!-- pack1.TNG_001 -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+  <test name="FirefoxTest(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="pack1.RadioButton1">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="radioButtonTest"/>
+        </methods>
+      </class> <!-- pack1.RadioButton1 -->
+      <class name="pack1.LinksTesting1">
+        <methods>
+          <include name="linktesting1"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- pack1.LinksTesting1 -->
+      <class name="pack1.CheckBox1">
+        <methods>
+          <include name="checkboxTest"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- pack1.CheckBox1 -->
+      <class name="pack1.TNG_001">
+        <methods>
+          <include name="amazon"/>
+          <include name="startprocess"/>
+          <include name="endProcess"/>
+        </methods>
+      </class> <!-- pack1.TNG_001 -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+</suite> <!-- Failed suite [RegressionSuite] -->
