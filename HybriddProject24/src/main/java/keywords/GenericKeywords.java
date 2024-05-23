@@ -1,5 +1,8 @@
 package keywords;
 
+import java.io.FileInputStream;
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,6 +11,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class GenericKeywords  extends ValidationKeywords 
@@ -15,9 +21,23 @@ public class GenericKeywords  extends ValidationKeywords
 {
 	
 	public WebDriver driver;
+	 public String Projectpath = System.getProperty("user.dir");
+	   
+	   public  FileInputStream fis;
+	   
+	   public Properties orprop;
+	   
+	   public Properties mainprop;
+	   
+	   public Properties childprop;
+	   
+	   public ExtentTest test;
+	   
 	
 	public void openBrowser(String browser)
 	{
+		
+		log("Openinig Browser : "+browser);
 		if(browser.equals("chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
@@ -33,23 +53,32 @@ public class GenericKeywords  extends ValidationKeywords
 	
 	public void navigate(String url)
 	{
+		log("Navigate to url : "+url);
 		driver.navigate().to(url);
 	}
 	
 	public void click(String locatorkey)
 	{
+		log("Clicking on element"+locatorkey);
+
 		getElement(locatorkey).click();
 		
 	}
 	
 	public void type(String locatorkey,String text)
 	{
-		
+		log("typing some text "+locatorkey);
+
+		getElement(locatorkey).sendKeys(text);
+
 	}
 	
 	public void selectOption(String locatorkey,String option)
 	{
-		
+		log("selectOption "+locatorkey);
+
+		getElement(locatorkey).sendKeys(option);
+
 	}
 	
 	public String getText(String locatorkey)
@@ -138,6 +167,19 @@ public class GenericKeywords  extends ValidationKeywords
 		
 	}
 
+	
+	public void setReport(ExtentTest test)
+	{
+		this.test = test;
+		
+	}
+	
+	//Reporting Function
+	
+	public void log(String msg)
+	{
+		test.log(Status.INFO,msg);
+	}
 
 	
 

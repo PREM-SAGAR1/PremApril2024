@@ -2,6 +2,8 @@ package testcases;
 
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
+
 import keywords.ApplicationKeywords;
 
 public class Session extends BaseTest
@@ -12,14 +14,22 @@ public class Session extends BaseTest
   @Test
   public void doLogin() 
   {
-	  System.out.println("logging in....");
+	  test.log(Status.INFO,"Logging In....");
+	 
+	  app.openBrowser("firefox");
+	  app.navigate("rediffurl");
+	  
 	  app.click("sigin_linktext");
+	  app.type("useremail_id","rediffuser");
+	  app.type("userpassword_name","rediffpassword");
   
+	  app.click("submit_id");
   }
   
   @Test
   public void doLogout() 
   {
-	  System.out.println("logging out.....");
+	  test.log(Status.INFO,"logging out ....");
+
   }
 }

@@ -2,14 +2,16 @@ package testcases;
 
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
+
 public class PortfolioManagement extends BaseTest
 {
 	
   @Test
   public void createPortfolio() 
   {
-	  System.out.println("createPortfolio");
-  }
+	  test.log(Status.INFO,"createPortfolio");
+   }
   
   @Test
   public void DeletePortfolio() 
